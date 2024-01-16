@@ -343,23 +343,23 @@
 
         <div class="row no-gutters block-9">
           <div class="col-md-6 order-md-last d-flex">
-            <form action="#" class="bg-light p-4 p-md-5 contact-form">
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Name">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Your Email">
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" placeholder="Subject">
-              </div>
-              <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-              </div>
-              <div class="form-group">
-                <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
-              </div>
-            </form>
+            <form action="sendmail.php" method="POST" class="bg-light p-4 p-md-5 contact-form">
+				<div class="form-group">
+					<input type="text" name="name" class="form-control" placeholder="Your Name" required>
+				</div>
+				<div class="form-group">
+					<input type="email" name="email" class="form-control" placeholder="Your Email" required>
+				</div>
+				<div class="form-group">
+					<input type="text" name="subject" class="form-control" placeholder="Subject" required>
+				</div>
+				<div class="form-group">
+					<textarea name="message" cols="30" rows="7" class="form-control" placeholder="Message" required></textarea>
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+				</div>
+			</form>			
           
           </div>
 
@@ -452,6 +452,27 @@
   <script src="js/typed.js"></script>
   
   <script src="js/main.js"></script>
+  <script>
+	document.addEventListener("DOMContentLoaded", function() {
+	  // Get all elements with class="navbar-toggler" (should be one in this case)
+	  var navbarToggler = document.querySelector(".navbar-toggler");
+  
+	  // Get all links within the navbar
+	  var navbarLinks = document.querySelectorAll("#ftco-nav a");
+  
+	  // Add a click event listener to each link
+	  for (var i = 0; i < navbarLinks.length; i++) {
+		navbarLinks[i].addEventListener("click", function() {
+		  // Check if the navbar is expanded
+		  if (navbarToggler.getAttribute("aria-expanded") === "true") {
+			// Trigger a click on the navbar toggler to collapse it
+			navbarToggler.click();
+		  }
+		});
+	  }
+	});
+  </script>
+  
 
   
     
