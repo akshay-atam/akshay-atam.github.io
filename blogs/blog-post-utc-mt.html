@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <title>Unlocking the Translator's Code - Machine Translation with Retnet</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Leven - Resume / CV / vCard Template" />
+    <meta name="keywords" content="vcard, resposnive, retina, resume, jquery, css3, bootstrap, portfolio" />
+    <meta name="author" content="lmpixels" />
+    <link rel="shortcut icon" href="favicon.ico">
+
+
+    <link rel="stylesheet" href="../css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="../css/owl.carousel.css" type="text/css">
+    <link rel="stylesheet" href="../css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="../css/main.css" type="text/css">
+    <link rel="stylesheet" href="../highlightjs/styles/a11y-dark.min.css">
+  </head>
+
+  <body class="page">
+
+    <div class="lm-animated-bg"></div>
+    
+    <!-- Loading animation -->
+    <div class="preloader">
+      <div class="preloader-animation">
+        <div class="preloader-spinner">
+        </div>
+      </div>
+    </div>
+    <!-- /Loading animation -->
+
+    <!-- Scroll To Top Button -->
+    <div class="lmpixels-scroll-to-top"><i class="lnr lnr-chevron-up"></i></div>
+    <!-- /Scroll To Top Button -->
+
+    <div class="page-scroll">
+      <div id="page_container" class="page-container bg-move-effect" data-animation="transition-flip-in-right">
+
+        <!-- Header -->
+        <header id="site_header" class="header">
+          <div class="header-content clearfix">
+                
+            <!-- Text Logo -->
+            <div class="text-logo">
+              <a href="../index.html">
+                <div class="logo-symbol">A</div>
+                <div class="logo-text">Akshay <span>Atam</span></div>
+              </a>
+            </div>
+            <!-- /Text Logo -->
+
+            <!-- Navigation -->
+            <div class="site-nav mobile-menu-hide">
+              <ul class="leven-classic-menu site-main-menu">
+                <li class="menu-item">
+                  <a href="../index.html">About Me</a>
+                </li>
+
+                <li class="menu-item">
+                  <a href="../resume.html">Resume</a>
+                </li>
+
+                <li class="menu-item">
+                  <a href="../portfolio.html">Portfolio</a>
+                </li>
+                
+                <li class="menu-item">
+                  <a href="../blog-3-columns.html">Blog</a>
+                </li>
+
+                <li class="menu-item">
+                  <a href="../contact.html">Contact</a>
+                </li>
+              </ul>
+            </div>
+
+            <a class="menu-toggle mobile-visible">
+              <i class="fa fa-bars"></i>
+            </a>
+          </div>
+        </header>
+        <!-- /Header -->
+
+        <div id="main" class="site-main">
+          <div id="main-content" class="single-page-content">
+            <div id="primary" class="content-area">
+              <div id="content" class="page-content site-content" role="main">
+
+                <article class="post">
+
+                  <header class="entry-header">
+                    <div class="entry-meta entry-meta-top">
+                      <span><a href="../404.html" rel="category tag">Natural Language Processing</a></span>      
+                    </div><!-- .entry-meta -->
+
+                    <h2 class="entry-title">Unlocking the Translator's Code - Machine Translation with RetNet</h2>
+                  </header><!-- .entry-header -->
+
+                  <div class="post-thumbnail">
+                    <img src="../img/blog/blog_post_1_full.jpg" alt=""  />
+                  </div>
+
+                  <div class="post-content">
+                    <div class="entry-content">
+
+                      <div class="row">
+                        <div class=" col-xs-12 col-sm-12 ">
+
+                            <p>Machine Translation has witnessed significant advancements in recent years, evolving from traditional Recurrent Neural Networks (RNNs) to the Transformer architecture. While RNNs provided a foundation for sequence modeling in machine translation, their inherent sequential nature led to challenges in parallelization during training, limiting their scalability. Additionally, RNNs suffered from computational inefficiency during inference, resulting in increased decoding latency and memory consumption.</p>
+                            
+                            <p>The advent of Transformers addressed the parallelization bottleneck through self-attention mechanisms, significantly improving training efficiency. However, the benefits of parallelization introduced new challenges in terms of inference cost and memory complexity, particularly for long sequences. In this context, a novel approach known as Retentive Networks, aims to reconcile the trade-offs between training parallelism, low-cost inference, and performance in machine translation.</p>
+                            
+                            <div class="sub-topic">
+                              <h3>The "Impossible Triangle" Problem</h3>
+
+                              <p>The motivation of RetNet comes from the recognition of the “impossible triangle” problem in current Large Language Models (LLMs). The “impossible triangle” tells us that current models fail to achieve the three desired dimensions of training parallelism, low-cost inference, and a strong model simultaneously. These dimensions form the vertices of the triangle with arms representing the existing models and what they achieve. As you can see in below figure, existing models fail to fulfill the desired property of any one of the vertex. In contrast, RetNet claims to achieve all three properties under a single framework.</p>
+
+                              <figure class="single-image">
+                                <img src="../img/blog/blog-img-utc-mt/impossible_triangle.png" alt="Impossible Triangle">
+                                <figcaption>Your caption text here</figcaption>
+                              </figure>
+                              
+                            </div>
+
+                            <div class="sub-topic">
+                              <h3>Motivation for RetNet</h3>
+                              <p>The RetNet architecture consists of multi-scale retention which replaces the multi-head attention. It supports three computational paradigms, i.e. parallel, recurrent, and chunk-wise recurrent representations which enables efficient long-sequence modeling with linear complexity.</p>
+
+                              <ul>
+                                <li><strong>Parallel Representation </strong>empowers training parallelism to utilize GPU devices fully.</li>
+                                <li><strong>Recurrent Representation </strong> enables efficient O(1) inference in terms of memory and computation.</li>
+                                <li><strong>Chunk-wise Recurrent Representation</strong> can perform efficient long-sequence modeling.</li>
+                              </ul>
+                            </div>
+
+                            <div class="sub-topic">
+                              <h3>Motivation for this project</h3>
+                              <p>It was a regular working day for me when I stumbled across a beautiful article by Shantanu Chandra on the explanation of the RetNet architecture (I highly suggest his article for a more in-depth explanation). On the same day, my deep learning professor told about the dates for the project. Just by skimming through the research paper prior, I got an idea to use RetNet for Machine Translation.</p>
+                              <p>While there is a small amount of information available on RetNet, being a novel technique, Microsoft’s torchscale library presented with an opportunity to use RetNet.</p>
+                            </div>
+
+                            <div class="sub-topic">
+                              <h3>Data</h3>
+                              <p>The data that I used for this project is the IWSLT 2017 dataset of English to French sentences. The dataset is available on Huggingface and it contains 232,825 training examples, 890 validation examples, and 8,597 test examples. The dataset is designed for machine translation tasks and is suitable for training and evaluating models on English-to-French translation.</p>
+                            </div>
+
+                            <div class="sub-topic">
+                              <h3>Experiments</h3>
+                              <p>The dataset was initially trained on 10,000 examples on my personal laptop equipped with an RTX 3060 Laptop GPU with 6GB of VRAM. However, training for all 232k examples would take a lot of time so I switched to using Google Colab with Nvidia V100 GPU. The torchscale library from Microsoft is a PyTorch library that allows researchers and developers to scale up Transformers efficiently and effectively.</p>
+                            </div>
+
+                            <div class="sub-topic">
+                              <h3>The Code</h3>
+                              <p>The entire Colab notebook can be found on my GitHub. Before loading the dataset, we would need to install the following libraries: transformers, datasets, and torchscale.</p>
+
+                              <pre><code>pip install transformers datasets torchscale</code></pre>
+
+                              <p>The next step is to load the IWSLT 2017 dataset from huggingface.</p>
+
+                              <div class="terminal">
+                                <div class="terminal-header">
+                                  <div class="terminal-dots">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                  </div>
+                                  <span class="terminal-title">Example Title</span>
+                                </div>
+                                <pre><code class="language-python">from datasets import load_dataset
+                                  dataset = load_dataset("iwslt2017", "iwslt2017-en-fr")
+                                  print(dataset)
+                                  
+                                  # OUTPUT
+                                  '''
+                                  DatasetDict({
+                                      train: Dataset({
+                                          features: ['translation'],
+                                          num_rows: 232825
+                                      })
+                                      test: Dataset({
+                                          features: ['translation'],
+                                          num_rows: 8597
+                                      })
+                                      validation: Dataset({
+                                          features: ['translation'],
+                                          num_rows: 890
+                                      })
+                                  })
+                                  '''</code></pre>
+                              </div>
+                              
+
+                              <pre><code class="language-python">from datasets import load_dataset
+                                dataset = load_dataset("iwslt2017", "iwslt2017-en-fr")
+                                print(dataset)
+                                
+                                # OUTPUT
+                                '''
+                                DatasetDict({
+                                    train: Dataset({
+                                        features: ['translation'],
+                                        num_rows: 232825
+                                    })
+                                    test: Dataset({
+                                        features: ['translation'],
+                                        num_rows: 8597
+                                    })
+                                    validation: Dataset({
+                                        features: ['translation'],
+                                        num_rows: 890
+                                    })
+                                })
+                                '''</code></pre>
+
+                                <p>We would need to tokenize the sentences. You can either do it using functions or use a pre-trained tokenizer like BERT for this. I chose the latter.</p>
+
+                                <pre><code>from transformers import BertTokenizer
+                                  tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
+                                  
+                                  def tokenize(sentences, tokenizer):
+                                      tokenized_sentences = tokenizer(
+                                          sentences,
+                                          truncation=True,
+                                          padding=True,
+                                          add_special_tokens=True,
+                                          return_tensors="pt",
+                                          max_length=512
+                                      )
+                                      return tokenized_sentences</code></pre>
+
+                                <p>Once the tokenization is complete, we could start with creating the dataset for the sentences.</p>
+
+                                <pre><code>class TranslationDataset(Dataset):
+                                  def __init__(self, tokenized_source, tokenized_target):
+                                      self.source_tokens = tokenized_source["input_ids"]
+                                      self.target_tokens = tokenized_target["input_ids"]
+                              
+                                  def __len__(self):
+                                      return len(self.source_tokens)
+                              
+                                  def __getitem__(self, index):
+                                      source_sequence = self.source_tokens[index]
+                                      target_sequence = self.target_tokens[index]
+                              
+                                      return {
+                                          "input_ids": source_sequence,
+                                          "labels": target_sequence,
+                                      }</code></pre>
+
+                                <p>The next step is to create the encoder-retnet model itself. To do that, we call the Encoder and Retnet config from torchscale and create our model.</p>
+
+                                <pre><code>from torchscale.architecture.config import EncoderConfig
+                                  from torchscale.architecture.encoder import Encoder
+                                  from torchscale.component.embedding import PositionalEmbedding, TextEmbedding
+                                  
+                                  enc_config = EncoderConfig(
+                                      encoder_embed_dim=64,
+                                      encoder_attention_heads=8,
+                                      encoder_ffn_embed_dim=256,
+                                      encoder_layers=8,
+                                      max_source_positions=512,
+                                      vocab_size=tokenizer.vocab_size
+                                  )
+                                  encoder = Encoder(
+                                      enc_config,
+                                      embed_tokens=TextEmbedding(tokenizer.vocab_size, enc_config.encoder_embed_dim),
+                                      embed_positions=PositionalEmbedding(enc_config.max_source_positions, enc_config.encoder_embed_dim)
+                                  )</code></pre>
+
+                                  <pre><code>from torchscale.architecture.config import RetNetConfig
+                                    from torchscale.architecture.retnet import RetNetDecoder
+                                    
+                                    ret_config = RetNetConfig(
+                                        decoder_embed_dim=64,
+                                        decoder_value_embed_dim=64,
+                                        decoder_retention_heads=4,
+                                        decoder_ffn_embed_dim=256,
+                                        decoder_layers=8,
+                                        max_target_positions=512,
+                                        vocab_size=tokenizer.vocab_size
+                                    )
+                                    retnet = RetNetDecoder(
+                                        ret_config,
+                                        embed_tokens=TextEmbedding(tokenizer.vocab_size, ret_config.decoder_embed_dim),
+                                    )</code></pre>
+
+                                    <p>Now that our encoder and retnet models are created, we can define the optimizers and loss function. For this project, I used AdamW optimizer (with learning rate = 1e-5), and Cross-Entropy loss function.</p>
+
+                                    <p>The next step is to create the DataLoaders for the train, validation, and test set. The DataLoaders are created with a batch size of 32.</p>
+
+                                    <pre><code>batch_size = 32
+                                      # Create data loaders for training, validation, and testing
+                                      train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=False)
+                                      val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
+                                      test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)</code></pre>
+
+                                    <p>The penultimate step is our training loop. The model is trained on 20 epochs and with a batch size of 32, it takes around 3 hours to train on Nvidia V100 GPU.</p>
+
+                                    <pre><code>num_epochs = 20
+                                      train_losses = []
+                                      val_losses = []
+                                      
+                                      for epoch in range(num_epochs):
+                                          encoder.train()
+                                          retnet.train()
+                                      
+                                          total_loss = 0
+                                      
+                                          for batch in tqdm(train_loader):
+                                              encoder_optimizer.zero_grad()
+                                              retnet_optimizer.zero_grad()
+                                      
+                                              src_tokens = batch['input_ids']
+                                              prev_output_tokens = batch['labels']
+                                              target_sequence = batch['labels']
+                                      
+                                              encoder_output = encoder(src_tokens)
+                                              retnet_output, _ = retnet(prev_output_tokens)
+                                      
+                                              loss = criterion(retnet_output.view(-1, ret_config.vocab_size), target_sequence.view(-1))
+                                      
+                                              loss.backward()
+                                      
+                                              encoder_optimizer.step()
+                                              retnet_optimizer.step()
+                                      
+                                              total_loss += loss.item()
+                                      
+                                          average_loss = total_loss / len(train_loader)
+                                          train_losses.append(average_loss)
+                                      
+                                          print(f"Epoch {epoch + 1}, Training loss: {average_loss}")
+                                      
+                                          encoder.eval()
+                                          retnet.eval()
+                                      
+                                          with torch.no_grad():
+                                              total_val_loss = 0
+                                      
+                                              for val_batch in tqdm(val_loader):
+                                      
+                                                  val_src_tokens = val_batch["input_ids"]
+                                                  val_prev_output_tokens = val_batch["labels"]
+                                      
+                                                  encoder_output = encoder(val_src_tokens)
+                                                  retnet_output, _ = retnet(val_prev_output_tokens)
+                                      
+                                                  val_loss = criterion(retnet_output.view(-1, ret_config.vocab_size), val_batch['labels'].view(-1))
+                                                  total_val_loss += val_loss.item()
+                                      
+                                              average_val_loss = total_val_loss / len(val_loader)
+                                              val_losses.append(average_val_loss)
+                                      
+                                              print(f"Epoch {epoch + 1}, Validation Loss: {average_val_loss}")</code></pre>
+
+                                    <p>Once, the training is complete, we calculate the final test loss.</p>
+
+                                    <pre><code>encoder.eval()
+                                      retnet.eval()
+                                      
+                                      with torch.no_grad():
+                                          total_test_loss = 0
+                                      
+                                          for test_batch in tqdm(test_loader):
+                                      
+                                              test_src_tokens = test_batch["input_ids"]
+                                              test_prev_output_tokens = test_batch["labels"]
+                                      
+                                              encoder_output = encoder(test_src_tokens)
+                                              retnet_output, _ = retnet(test_prev_output_tokens)
+                                      
+                                              val_loss = criterion(retnet_output.view(-1, ret_config.vocab_size), test_batch['labels'].view(-1))
+                                              total_test_loss += val_loss.item()
+                                      
+                                          average_test_loss = total_test_loss / len(test_loader)
+                                      
+                                          print(f"Final Test loss: {average_test_loss}")
+                                      
+                                      # OUTPUT
+                                      '''
+                                      Final Test loss: 0.003437698159646957
+                                      '''</code></pre>
+
+                                    <p>Finally, the model is evaluated using the BLEU score.</p>
+
+                                    <pre><code>from torchtext.data.metrics import bleu_score
+                                      encoder.eval()
+                                      retnet.eval()
+                                      
+                                      candidate_corpus = []
+                                      reference_corpus = []
+                                      
+                                      with torch.no_grad():
+                                          # Training BLEU score
+                                          for batch in tqdm(train_loader):
+                                              src_tokens = batch['input_ids']
+                                              prev_output_tokens = batch['labels']
+                                      
+                                              encoder_output = encoder(src_tokens)
+                                              retnet_output, _ = retnet(prev_output_tokens)
+                                      
+                                              predictions = torch.argmax(retnet_output, dim=-1)
+                                      
+                                              # Convert token IDs to strings
+                                              candidates = [tokenizer.decode(pred, skip_special_tokens=True) for pred in predictions.cpu().numpy().tolist()]
+                                              candidate_corpus.extend(candidates)
+                                      
+                                              references = [tokenizer.decode(seq, skip_special_tokens=True).split() for seq in batch['labels'].cpu().numpy().tolist()]
+                                              reference_corpus.extend(references)
+                                      
+                                      candidate_corpus = [str(candidate) for candidate in candidate_corpus]
+                                      
+                                      bleu = bleu_score(candidate_corpus, reference_corpus)
+                                      print(f"BLEU score: {bleu}")
+                                      
+                                      # OUTPUT
+                                      '''
+                                      BLEU score: 0.36411288380622864
+                                      '''</code></pre>
+
+                                    <p>We get a final BLEU score of 36.4! That's really impressive for RetNet and the model's architecture overall. During training, for comparison, I also created a similar encoder-decoder model to test the runtime and with using 10k examples, the RetNet model was around 10 minutes faster than traditional encoder-decoder model.</p>
+
+                                    <div class="sub-topic">
+                                      <h3>Conclusion</h3>
+                                      <p>In summary, this article has introduced RetNet, a groundbreaking approach to machine translation. We’ve provided an in-depth look at the method, including code and a remarkable BLEU score of 36.4, showcasing its effectiveness.</p>
+                                      <p>Looking ahead, the future is promising for RetNet. By leveraging increased GPU power and extending its training to multiple languages, we can enhance its capabilities and versatility. Furthermore, the project’s success is likely to pique the interest of the machine translation community, potentially leading to collaborations and further advancements in this innovative architecture.</p>
+                                      <p>One can’t help but imagine the possibilities of a full retentive model with a retentive encoder, hinting at an exciting future where machine translation reaches new heights of accuracy and contextual understanding.</p>
+                                      <p>In conclusion, RetNet has the potential to reshape the landscape of machine translation, and we eagerly await the exciting developments and applications that lie ahead.</p>
+                                    </div>                             
+                            </div>
+                        </div>
+                      </div>
+
+                    </div><!-- .entry-content -->
+  
+                    <div class="entry-meta entry-meta-bottom">
+                      <div class="date-author">
+                        
+                        <span class="entry-date">
+                          <a href="#" rel="bookmark">
+                            <i class="far fa-clock"></i>
+                            <time class="entry-date" datetime="2020-04-04T08:29:37+00:00"> December 24, 2023</time>
+                          </a>
+                        </span>
+
+                        <span class="author vcard">
+                          <a class="url fn n" href="../index.html" rel="author">
+                            <i class="fas fa-user"></i>
+                            <span> Akshay Atam</span>
+                          </a>
+                        </span>
+                      </div>
+  
+                      <!-- Share Buttons -->
+                      <div class="entry-share btn-group share-buttons">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=http://example.com/" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" class="btn" target="_blank" title="Share on Facebook">
+                          <i class="fab fa-facebook-f"></i>
+                        </a>
+    
+                        <a href="https://twitter.com/share?url=http://example.com/" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" class="btn" target="_blank" title="Share on Twitter">
+                          <i class="fab fa-twitter"></i>
+                        </a>
+                        
+                        <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://example.com/" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="btn" title="Share on LinkedIn">
+                          <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        
+                        <a href="http://www.digg.com/submit?url=http://example.com/" onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;" class="btn" title="Share on Digg">
+                          <i class="fab fa-digg"></i>
+                        </a>
+                      </div>
+                      <!-- /Share Buttons -->
+                    </div>
+
+                    <div class="post-tags">
+                      <span class="tags">
+                        <a href="#" rel="tag">Machine Translation</a>
+                        <a href="#" rel="tag">Large Language Models</a>
+                        <a href="#" rel="tag">Deep Learning</a>
+                        <a href="#" rel="tag">Recurrent Neural Networks</a>
+                        <a href="#" rel="tag">Transformers</a>
+                      </span>
+                    </div>
+                  </div>
+                </article>
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <footer class="site-footer clearfix">
+          <div class="footer-social">
+            <ul class="footer-social-links">
+              <li>
+                <a href="#" target="_blank">Twitter</a>
+              </li>
+
+              <li>
+                <a href="#" target="_blank">Facebook</a>
+              </li>
+
+              <li>
+                <a href="#" target="_blank">Instagram</a>
+              </li>
+            </ul>
+          </div>
+              
+          <div class="footer-copyrights">
+            <p>© 2020 All rights reserved. LMPixels.</p>
+          </div>
+        </footer>
+        
+      </div>
+    </div>
+
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/modernizr.custom.js"></script>
+
+    <script src="../js/imagesloaded.pkgd.min.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    <script src="../js/bootstrap.min.js"></script>
+
+    <script src='../js/jquery.shuffle.min.js'></script>
+    <script src='../js/masonry.pkgd.min.js'></script>
+    <script src='../js/owl.carousel.min.js'></script>
+    <script src="../js/jquery.magnific-popup.min.js"></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrDf32aQTCVENBhFJbMBKOUTiUAABtC2o"></script>
+    <script src="../js/jquery.googlemap.js"></script>
+    <script src="../js/validator.js"></script>
+    <script src="../js/main.js"></script>
+
+    <script src="../highlightjs/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+  </body>
+</html>
