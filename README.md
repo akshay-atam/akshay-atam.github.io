@@ -2,8 +2,8 @@
 
 ## Update
 
-4/8/2024 - 4/10/2024
-- [ ] Update "About Me" Section
+4/9/2024
+- [x] Minor adjustments to the "Portfolio" section
 - [x] Fix "Download CV" Link
 
 4/7/2024
